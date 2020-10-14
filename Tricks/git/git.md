@@ -1,0 +1,29 @@
+- 下载git
+  - debian:
+    - sudo apt-get install git
+  - centos:
+    - sudo yum install git
+- 配置姓名和邮箱
+  - git config --global user.email "youremail@xxx"
+  - git config --global user.name "yourname"
+- 初始化
+  - git init
+- 提交流程
+  - git add
+  - git commit
+- 提交远程仓库
+  - 本地命令行
+    - ssh-keygen -t rsa -C "youremail@xxx"
+    - 复制~/.ssh/id_rsa.pub的公钥
+  - GitHub网站
+    - 设置里将复制的公钥粘贴在SSH KEY里
+    - 新建仓库（最好不勾选任何如readme文件）
+  - 命令行
+    - git remote add origin https://github.com/yourname/xxx.git
+    - git push origin master
+
+
+- 取消add操作
+  - git reset HEAD -- .
+- 若add后把工作区文件误删了，用以下命令恢复
+  - git checkout -- .
